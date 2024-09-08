@@ -116,7 +116,7 @@ const verifyTwoFA = async (
       level_name: userResponse.level_name
     };
     if (!process.env.JWT_SECRET) {
-      throw new Error('.env not set');
+      throw new Error('JWT_SECRET not set');
     };
     const token = jwt.sign(tokenContent, process.env.JWT_SECRET);
     const loginResponse: LoginResponse = {
